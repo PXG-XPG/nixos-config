@@ -1,0 +1,44 @@
+# Remove the default shortcuts
+keybind=clear
+
+# Copy and Paste
+keybind = alt+w=copy_to_clipboard
+keybind = ctrl+y=paste_from_clipboard
+
+# Tab
+keybind = ctrl+t=new_tab
+keybind = ctrl+w=close_tab:this
+keybind = ctrl+bracket_right=next_tab
+keybind = ctrl+bracket_left=previous_tab
+
+# switch to specific tabs
+keybind = alt+1=goto_tab:1
+keybind = alt+2=goto_tab:2
+keybind = alt+3=goto_tab:3
+keybind = alt+4=goto_tab:4
+keybind = alt+5=goto_tab:5
+keybind = alt+6=goto_tab:6
+keybind = alt+7=goto_tab:7
+keybind = alt+8=goto_tab:8
+keybind = alt+9=goto_tab:9
+
+# Scrolling/scrollback
+keybind = alt+p=scroll_page_lines:-1
+keybind = alt+n=scroll_page_lines:1
+
+# Window
+# Split window
+keybind = alt+shift+\=new_split:right
+keybind = alt+-=new_split:down
+
+# Switch focus to the neighboring window in the indicated direction
+keybind = alt+shift+h=goto_split:left
+keybind = alt+shift+l=goto_split:right
+keybind = alt+shift+k=goto_split:up
+keybind = alt+shift+j=goto_split:down
+
+# Resize windows
+keybind = alt+left=resize_split:left,1
+keybind = alt+down=resize_split:down,1
+keybind = alt+up=resize_split:up,1
+keybind = alt+right=resize_split:right,1

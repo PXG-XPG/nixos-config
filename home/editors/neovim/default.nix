@@ -1,0 +1,9 @@
+{ ... }:
+
+{
+    imports = [
+        ./lazyvim
+        # ./nvf
+        # ./nixvim
+    ];
+}

@@ -1,0 +1,2 @@
+// 剪贴板历史
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"

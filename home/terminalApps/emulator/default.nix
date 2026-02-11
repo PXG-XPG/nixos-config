@@ -1,0 +1,9 @@
+{ ... }:
+
+{
+  imports = [
+    ./wezterm
+    ./kitty
+    ./ghostty
+  ];
+}
