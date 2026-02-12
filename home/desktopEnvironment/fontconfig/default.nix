@@ -32,10 +32,6 @@
     lxgw-wenkai-tc
     wqy_microhei
     wqy_zenhei
-    arphic-ukai
-    arphic-uming
-    ark-pixel-font
-    cns11643-kai
 
     # Twitter打造的emoji字体
     twitter-color-emoji
