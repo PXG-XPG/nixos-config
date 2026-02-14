@@ -3,8 +3,7 @@
 
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:PXG-XPG/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # home-manager
     home-manager = {
