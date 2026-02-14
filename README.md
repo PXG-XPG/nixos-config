@@ -17,3 +17,9 @@ nixos-generate-config --root /mnt
 cp -r ./* /mnt/etc/nixos
 
 nixos-install --flake "/mnt/etc/nixos#nixos" --no-root-password
+
+sudo nixos-enter --root /mnt
+
+passwd rum
+
+passwd root
