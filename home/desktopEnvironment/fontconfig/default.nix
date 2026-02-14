@@ -30,8 +30,6 @@
     lxgw-neoxihei
     lxgw-fusionkai
     lxgw-wenkai-tc
-    wqy_microhei
-    wqy_zenhei
 
     # Twitter打造的emoji字体
     twitter-color-emoji
