@@ -33,10 +33,6 @@
     arphic-ukai
     arphic-uming
     ark-pixel-font
-    edusong
-    edukai
-    eduli
-    cns11643-kai
 
     # Twitter打造的emoji字体
     twitter-color-emoji
