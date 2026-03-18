@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
 
   boot.kernelParams = [
@@ -18,6 +18,7 @@
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
+    dynamicBoost.enable = lib.mkForce true;
 
     # Modesetting is required.解决wayland compositors的bug
     modesetting.enable = true;

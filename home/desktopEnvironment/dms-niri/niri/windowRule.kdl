@@ -30,6 +30,7 @@ window-rule {
     match app-id=r#"^steam$"#
     match title="flameshot-pin"
     match app-id=r#"^xdg-desktop-portal$"#
+    match app-id=r#"^org.gnome.Loupe$"#
     open-floating true
 }
 window-rule {

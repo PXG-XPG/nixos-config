@@ -4,6 +4,7 @@
     # base tools
     git
     less
+    man
     wget
     curl
     gawk
@@ -20,6 +21,7 @@
     neovim
     helix
     emacs
+    tinyxxd
     # shell
     zsh
     fish

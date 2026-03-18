@@ -5,6 +5,9 @@
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    # 最新 stable 分支的 nixpkgs，用于回退个别软件包的版本
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+
     # home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,41 +21,43 @@
     };
   };
 
-  outputs =
-    inputs@{
+  outputs = inputs@{
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       nixpak,
       ...
-    }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-    in
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        # Pass pkgs you define
-        inherit system pkgs;
+  }: 
+  let
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations = {
+      nixos = nixpkgs.lib.nixosSystem {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        specialArgs = {
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         modules = [
-          # Include the main configuration file
           ./configuration.nix
-
-	  # 导入 home-manager 模块
-          home-manager.nixosModules.home-manager
-          {
+          
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "bak";
             home-manager.users.rum = ./home/home.nix;
             home-manager.extraSpecialArgs = {
               inherit inputs;
-	    };
+            };
           }
         ];
       };
     };
+  };
 }
