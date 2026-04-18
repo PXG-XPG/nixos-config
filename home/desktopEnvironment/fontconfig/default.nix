@@ -11,8 +11,7 @@
     corefonts
 
     # 为开发者打造的字体
-    fira-code
-    fira-code-symbols
+    nerd-fonts.comic-shanns-mono
     maple-mono.NF-CN
     nerd-fonts.jetbrains-mono
     nerd-fonts._0xproto
@@ -44,11 +43,8 @@
   ];
 
   fonts = {
-
     fontconfig = {
-
       defaultFonts = {
-
         serif = [
           # 英文: 衬线字体（笔画末端有修饰(衬线)的字体，通常用于印刷。）
           "Source Serif 4"
@@ -56,7 +52,6 @@
           "Source Han Serif SC" # 思源宋体
           "Source Han Serif TC"
         ];
-
         # SansSerif 也简写做 Sans, Sans 在法语中就是「without」或者「无」的意思
         sansSerif = [
           # 英文: 无衬线字体（指笔画末端没有修饰(衬线)的字体，通常用于屏幕显示）
@@ -66,7 +61,6 @@
           "Source Han Sans SC" # 思源黑体
           "Source Han Sans TC"
         ];
-
         # 等宽字体
         monospace = [
           # 中文
@@ -76,11 +70,9 @@
           # 英文
           "JetBrainsMono Nerd Font"
         ];
-
         emoji = [
           "Twitter Color Emoji"
         ];
-
       };
 
       configFile = {

@@ -1,10 +1,10 @@
 [Groups/0]
 # Group Name
-Name=Intl
+Name=Default
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=keyboard-us-altgr-intl
+DefaultIM=rime
 
 [Groups/0/Items/0]
 # Name
@@ -14,43 +14,17 @@ Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=keyboard-us-intl
+Name=rime
 # Layout
 Layout=
 
 [Groups/0/Items/2]
 # Name
-Name=keyboard-us-altgr-intl
-# Layout
-Layout=
-
-[Groups/1]
-# Group Name
-Name=Default
-# Layout
-Default Layout=us
-# Default Input Method
-DefaultIM=rime
-
-[Groups/1/Items/0]
-# Name
-Name=keyboard-us
-# Layout
-Layout=
-
-[Groups/1/Items/1]
-# Name
-Name=rime
-# Layout
-Layout=
-
-[Groups/1/Items/2]
-# Name
 Name=mozc
 # Layout
 Layout=
 
-[Groups/1/Items/3]
+[Groups/0/Items/3]
 # Name
 Name=hangul
 # Layout
@@ -58,5 +32,4 @@ Layout=
 
 [GroupOrder]
 0=Default
-1=Intl
 

@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   virtualisation.containers.enable = true;
 
@@ -14,13 +13,9 @@
 
     # 启用 NAT 虚拟网络，用于podman-compose
     defaultNetwork.settings.dns_enabled = true;
-
   };
-
-  hardware.nvidia-container-toolkit.enable = true; # 如果需要 NVIDIA GPU 支持则启用此选项
 
   environment.systemPackages = with pkgs; [
     podman-compose
   ];
-
 }

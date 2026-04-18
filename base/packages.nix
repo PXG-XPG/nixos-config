@@ -4,12 +4,12 @@
     # base tools
     git
     less
-    man
     wget
     curl
     gawk
     file
     exfatprogs
+    tinyxxd
     # enhanced base tools
     lsd
     gping # ping, but with a graph(TUI)
@@ -17,15 +17,6 @@
     curlie # curl with httpie
     httpie
     bat
-    # editor
-    neovim
-    helix
-    emacs
-    tinyxxd
-    # shell
-    zsh
-    fish
-    nushell
     # archives
     zip
     xz
@@ -42,9 +33,7 @@
     btop-cuda
     usbtop
     # useful tools
-    fastfetch
     fd
-    tree
     ripgrep
     zoxide
     fzf
@@ -54,7 +43,6 @@
     aria2
     trash-cli
     hexyl
-    direnv
     ethtool
     mesa-demos
     vulkan-tools

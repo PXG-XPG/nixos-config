@@ -1,14 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ 
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-
+{ config, lib, pkgs, ... }:
 {
   imports = [ 
       # Include the results of the hardware scan.
@@ -23,9 +13,13 @@
       # Include virtualisation configuration
       ./virtualisation
     ];
-
-  # enalbe Flakes support
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rum= {
@@ -38,15 +32,12 @@
       "docker"
       "podman"
       "gamemode"
+      "incus-admin"
     ];
     shell = pkgs.bash;
-    packages = with pkgs; [
-    ];
   };
 
-  environment.variables = {
-    EDITOR = "nvim";
-  };
+  security.sudo-rs.enable = true;
 
   system.stateVersion = "26.05";
 }

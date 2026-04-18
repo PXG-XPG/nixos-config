@@ -14,6 +14,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # nixvim
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # nixpak
     nixpak = {
       url = "github:nixpak/nixpak";
@@ -25,6 +31,7 @@
       self,
       nixpkgs,
       nixpkgs-stable,
+      nixvim,
       home-manager,
       nixpak,
       ...
@@ -51,7 +58,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "bak";
-            home-manager.users.rum = ./home/home.nix;
+            home-manager.users.rum = {
+              imports = [
+                ./home/home.nix
+                nixvim.homeModules.nixvim
+              ];
+            };
             home-manager.extraSpecialArgs = {
               inherit inputs;
             };

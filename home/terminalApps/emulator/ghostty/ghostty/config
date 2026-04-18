@@ -1,2 +1,4 @@
 config-file = ./base
 config-file = ./keybinds
+custom-shader = ./shaders/cursor_warp.glsl
+custom-shader = ./shaders/sonic_boom_cursor.glsl

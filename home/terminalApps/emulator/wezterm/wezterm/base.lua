@@ -22,8 +22,9 @@ return function(wezterm, config)
 	}
 
 	-- font
-	config.font = wezterm.font_with_fallback({ "0xProto Nerd Font", "LXGW Neo ZhiSong Screen" })
-	config.font_size = 15
+	-- config.font = wezterm.font_with_fallback({ "0xProto Nerd Font", "LXGW Neo ZhiSong Screen" })
+	config.font = wezterm.font_with_fallback({ "0xProto Nerd Font", "Maple Mono NF CN" })
+	config.font_size = 16
 
 	-- cursor
 	config.default_cursor_style = "BlinkingBar"
@@ -31,5 +32,5 @@ return function(wezterm, config)
 
 	-- Render front-end
 	config.front_end = "OpenGL"
-	config.enable_wayland = false
+	config.enable_wayland = true
 end

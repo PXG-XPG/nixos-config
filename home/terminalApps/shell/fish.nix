@@ -1,9 +1,9 @@
-{ pkgs, ... }:
-
+{ pkgs, lib, ... }:
 {
   programs.fish = {
     enable = true;
     shellAliases = {
+      su = "su -";
       mv = "mv -i";
       cp = "cp -i";
       cls = "clear";
@@ -13,6 +13,12 @@
       ".." = "cd ..";
       "..." = "cd ../..";
     };
+    plugins = [
+      {
+        name = "autopair";
+        inherit (pkgs.fishPlugins.autopair) src;
+      }
+    ];
     shellInit = ''
       fastfetch
       set -x STARSHIP_CONFIG ~/.config/gruvbox-rainbow.toml

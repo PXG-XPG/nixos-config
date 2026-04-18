@@ -1,6 +1,5 @@
 { config, lib, ... }:
 {
-
   boot.kernelParams = [
     # NVIDA将fbdev作为实验性功能默认关闭
     # 显式开启它确保 Wayland compositors function properly.

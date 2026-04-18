@@ -1,5 +1,4 @@
 { ... }:
-
 {
   imports = [
     ./editors
@@ -13,6 +12,11 @@
   # Define the user for whom to manage the home directory
   home.username = "rum";
   home.homeDirectory = "/home/rum";
+
+  # Define Envs
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
   # Change in each release
   home.stateVersion = "26.05";

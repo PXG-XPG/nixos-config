@@ -10,10 +10,9 @@
     corefonts
 
     # 为开发者打造的字体
-    fira-code
-    fira-code-symbols
     maple-mono.NF-CN
     nerd-fonts.jetbrains-mono
+    nerd-fonts._0xproto
 
     # 中文字体
     source-han-mono
@@ -28,15 +27,9 @@
     lxgw-neoxihei
     lxgw-fusionkai
     lxgw-wenkai-tc
-    wqy_microhei
-    wqy_zenhei
-    arphic-ukai
-    arphic-uming
-    ark-pixel-font
 
     # Twitter打造的emoji字体
     twitter-color-emoji
-    # twemoji-color-font
 
     # 覆盖低分辨率和pixel字体,保证最大兼容性
     liberation_ttf
@@ -58,7 +51,6 @@
       # User defined default fonts
       # https://catcat.cc/post/2021-03-07/
       defaultFonts = {
-
         serif = [
           # 西文: 衬线字体（笔画末端有修饰(衬线)的字体，通常用于印刷。）
           "Source Serif 4"
@@ -76,7 +68,6 @@
           "Source Han Sans SC" # 思源黑体
           "Source Han Sans TC"
         ];
-
         # 等宽字体
         monospace = [
           # 中文
@@ -86,17 +77,13 @@
           # 西文
           "JetBrainsMono Nerd Font"
         ];
-
         emoji = [
           "Twitter Color Emoji"
         ];
-
       };
 
       antialias = true; # 抗锯齿
-
       hinting.enable = false; # 禁止字体微调 - 高分辨率下没这必要
-
       subpixel = {
         rgba = "rgb"; # IPS 屏幕使用 rgb 排列
       };
