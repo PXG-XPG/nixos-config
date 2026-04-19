@@ -29,7 +29,6 @@
     libva-utils
     lm_sensors # for `sensors` command
     # system monitors
-    nvtopPackages.nvidia
     btop-cuda
     usbtop
     # useful tools
