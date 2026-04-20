@@ -8,7 +8,7 @@
     ./networking.nix
     ./nvidia.nix
     ./bluetooth.nix
-    ./fonts.nix
+    #./fonts.nix
     ./nix-ld.nix
     #./flatpak.nix
     ./sound.nix
