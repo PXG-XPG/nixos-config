@@ -38,7 +38,6 @@
     jq
     # file manager
     yazi
-    aria2
     trash-cli
     hexyl
     ethtool
