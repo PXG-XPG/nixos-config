@@ -1,13 +1,13 @@
 { ... }:
 {
   imports = [
-    ./flameshot.nix
+    #./flameshot.nix
     ./firefox.nix
-    ./mission-center.nix
-    ./obs-studio.nix
-    ./celluloid.nix
-    ./mediawriter.nix
-    ./evince.nix
-    ./keet.nix
+    #./mission-center.nix
+    #./obs-studio.nix
+    #./celluloid.nix
+    #./mediawriter.nix
+    #./evince.nix
+    #./keet.nix
   ];
 }
