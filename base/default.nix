@@ -10,7 +10,7 @@
     ./bluetooth.nix
     ./fonts.nix
     ./nix-ld.nix
-    ./flatpak.nix
+    #./flatpak.nix
     ./sound.nix
     ./packages.nix
     ./shell.nix
