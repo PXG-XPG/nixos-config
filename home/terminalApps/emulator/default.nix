@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./wezterm
-    ./kitty
-    ./ghostty
+    #./wezterm
+    #./kitty
+    #./ghostty
     ./alacritty
   ];
 }
