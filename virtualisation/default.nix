@@ -6,7 +6,7 @@
   imports = [
     # ./qemu-kvm.nix
     ./incus.nix
-    ./docker.nix
-    ./podman.nix
+    #./docker.nix
+    #./podman.nix
   ];
 }
