@@ -1,12 +1,12 @@
 { ... }:
 {
   imports = [
-    ./editors
-    ./terminalApps
-    ./desktopApps
-    ./fcitx5
-    ./appimageRun
-    ./virtualisation
+    #./editors
+    #./terminalApps
+    #./desktopApps
+    #./fcitx5
+    #./appimageRun
+    #./virtualisation
     ./desktopEnvironment
   ];
   # Define the user for whom to manage the home directory
