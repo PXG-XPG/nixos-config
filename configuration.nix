@@ -8,10 +8,10 @@
       ./base
 
       # Include desktop configuration
-      ./desktop
+      #./desktop
 
       # Include virtualisation configuration
-      ./virtualisation
+      #./virtualisation
     ];
   
   nix = {
