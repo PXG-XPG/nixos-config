@@ -7,7 +7,7 @@
     #./fcitx5
     #./appimageRun
     #./virtualisation
-    ./desktopEnvironment
+    #./desktopEnvironment
   ];
   # Define the user for whom to manage the home directory
   home.username = "rum";
