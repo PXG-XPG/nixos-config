@@ -11,10 +11,7 @@
     exfatprogs
     nano
     # enhanced base tools
-    lsd
-    gping # ping, but with a graph(TUI)
     ncdu
-    curlie # curl with httpie
     httpie
     bat
     # archives
