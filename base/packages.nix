@@ -10,7 +10,6 @@
     file
     exfatprogs
     nano
-    tinyxxd
     # enhanced base tools
     lsd
     gping # ping, but with a graph(TUI)
