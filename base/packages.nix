@@ -35,7 +35,6 @@
     # file manager
     yazi
     trash-cli
-    hexyl
     ethtool
     mesa-demos
     vulkan-tools
