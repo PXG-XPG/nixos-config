@@ -9,6 +9,7 @@
     gawk
     file
     exfatprogs
+    nano
     tinyxxd
     # enhanced base tools
     lsd
