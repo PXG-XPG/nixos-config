@@ -11,7 +11,6 @@
     exfatprogs
     nano
     # enhanced base tools
-    ncdu
     httpie
     bat
     # archives
