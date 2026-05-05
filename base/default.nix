@@ -8,12 +8,11 @@
     ./networking.nix
     ./nvidia.nix
     ./bluetooth.nix
-    #./fonts.nix
-    ./nix-ld.nix
-    #./flatpak.nix
+    ./fonts.nix
     ./sound.nix
     ./packages.nix
     ./shell.nix
+    ./user.nix
     ./editor
   ];
 }

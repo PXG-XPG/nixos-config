@@ -1,5 +1,4 @@
 { ... }:
-
 {
   programs.niri = {
     # 启用 Niri

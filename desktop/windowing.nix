@@ -1,5 +1,4 @@
 { ... }:
-
 {
   # 显式配置使用Wayland
   services.xserver.enable = true;

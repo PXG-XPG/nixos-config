@@ -8,6 +8,12 @@
     # 最新 stable 分支的 nixpkgs，用于回退个别软件包的版本
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
+    # disko module
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # home-manager
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -19,21 +25,15 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # nixpak
-    nixpak = {
-      url = "github:nixpak/nixpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs@{
       self,
       nixpkgs,
       nixpkgs-stable,
+      disko,
       nixvim,
       home-manager,
-      nixpak,
       ...
   }: 
   let
@@ -53,6 +53,10 @@
         };
         modules = [
           ./configuration.nix
+
+          # Import disko module
+          disko.nixosModules.disko
+          ./disko/disko.nix
           
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;

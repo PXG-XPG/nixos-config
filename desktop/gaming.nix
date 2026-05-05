@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # https://wiki.nixos.org/wiki/GameMode
   # Gamemode 在steam中使用：右键点击游戏，选择属性......，然后选择启动选项，输入：gamemoderun %command%

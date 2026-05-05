@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # 启用portal（远程桌面支持）
   xdg.portal = {

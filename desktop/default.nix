@@ -1,9 +1,8 @@
 { ... }:
-
 {
   imports = [
     ./windowing.nix
-    ./gaming.nix
+    # ./gaming.nix
     ./localsend.nix
     ./dms-niri
   ];

@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Desktop Shell
   programs.dms-shell = {

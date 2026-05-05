@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   # Greeter
   services.displayManager.dms-greeter = {

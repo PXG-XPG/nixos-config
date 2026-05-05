@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   imports = [
     ../polkit-gnome.nix
@@ -15,9 +14,7 @@
     xwayland-satellite
     adw-gtk3
     kdePackages.qt6ct
-    matugen
     i2c-tools
     wl-clipboard
-    cava
   ];
 }

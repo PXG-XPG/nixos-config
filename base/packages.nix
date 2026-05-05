@@ -1,39 +1,21 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    # base tools
     git
-    less
-    wget
-    curl
-    gawk
-    file
     exfatprogs
     nano
-    # enhanced base tools
-    httpie
-    bat
-    # archives
-    zip
-    xz
-    zstd
-    unzipNLS
     p7zip
-    # some utils
     pciutils # lspci
     usbutils # lsusb
     libva-utils
     lm_sensors # for `sensors` command
-    # system monitors
     usbtop
-    # useful tools
     fd
     ripgrep
     zoxide
     fzf
     jq
-    # file manager
-    yazi
+    yazi # File manager
     trash-cli
     ethtool
     mesa-demos
