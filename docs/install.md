@@ -5,6 +5,11 @@
 sudo -i
 ```
 
+## check network
+```
+ip a
+```
+
 ## confirm which disk you want to use
 ```
 lsblk
