@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# === 配置区 === #
-# 你的 flake 名称（nixosConfigurations 中的键）
+# === Configuration === #
+# Your flake name (the key in nixosConfigurations)
 HOSTNAME="nixos"
 
-# disko 配置文件相对路径（相对于 repo 根目录）
+# Relative path to the disko configuration file (relative to repo root)
 DISKO_CONFIG="./disko/disko-config.nix"
 
-# 目标磁盘（安装时会完全擦除！务必确认正确）
-# 如果是物理机，通常是 /dev/nvme0n1 或 /dev/sda
-# 如果是虚拟机测试，通常是 /dev/vda
+# Target disk (WILL BE FULLY ERASED! Ensure this is correct)
+# For physical machines, usually /dev/nvme0n1 or /dev/sda
+# For virtual machine testing, usually /dev/vda
 DISK="/dev/nvme1n1"
 
 echo "WARNING: This script will completely erase $DISK and install NixOS to $HOSTNAME"
