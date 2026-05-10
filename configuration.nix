@@ -1,6 +1,8 @@
 { ... }:
 {
   imports = [ 
+      ./pc.nix
+
       # Include base configuration
       ./base
 
