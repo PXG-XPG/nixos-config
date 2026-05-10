@@ -25,5 +25,7 @@ git clone https://github.com/PXG-XPG/nixos-config.git
 
 ## set password after installation
 nixos-enter --root /mnt
+
 passwd rum
+
 passwd root
