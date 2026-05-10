@@ -2,11 +2,11 @@
 {
   imports = [
     #./editors
-    ./cli
-    ./gui
-    ./fcitx5
-    ./desktop
-    ./emulator
+    #./cli
+    #./gui
+    #./fcitx5
+    #./desktop
+    #./emulator
   ];
   # Define the user for whom to manage the home directory
   home.username = "rum";
