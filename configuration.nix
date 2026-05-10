@@ -2,7 +2,7 @@
 {
   imports = [ 
       # Include the results of the hardware scan.
-      ./pc.nix
+      ./hardware-configuration.nix
 
       # Include base configuration
       ./base
