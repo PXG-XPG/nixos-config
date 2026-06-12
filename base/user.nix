@@ -6,12 +6,8 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "libvirt"
       "kvm"
-      "docker"
-      "podman"
-      "gamemode"
-      "incus-admin"
+      "greeter"
     ];
     shell = pkgs.bash;
   };

@@ -5,7 +5,6 @@
     ./eza.nix
     ./zoxide.nix
     ./btop.nix
-    ./mpd.nix
     ./tldr.nix
     ./packages.nix
     ./yazi.nix

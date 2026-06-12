@@ -1,12 +1,11 @@
 { ... }:
 {
   imports = [
-    #./editors
-    #./cli
-    #./gui
-    #./fcitx5
-    #./desktop
-    #./emulator
+    ./cli
+    ./gui
+    ./fcitx5
+    ./desktop
+    ./emulator
   ];
   # Define the user for whom to manage the home directory
   home.username = "rum";
@@ -14,7 +13,7 @@
 
   # Define Envs
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "nano";
   };
 
   # Change in each release

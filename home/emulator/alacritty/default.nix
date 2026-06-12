@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       window = {
-        opacity = 0.80;
+        opacity = 0.60;
         dynamic_title = true;
         option_as_alt = "Both"; # Option key acts as Alt on macOS
         decorations = "None"; # Show neither borders nor title bar

@@ -8,18 +8,11 @@
       ./base
 
       # Include desktop configuration
-      #./desktop
+      ./desktop
 
       # Include virtualisation configuration
-      #./virtualisation
+      ./virtual
     ];
   
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      auto-optimise-store = true;
-    };
-  };
-
   system.stateVersion = "26.05";
 }

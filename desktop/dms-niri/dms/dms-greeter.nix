@@ -3,7 +3,6 @@
   # Greeter
   services.displayManager.dms-greeter = {
     enable = true;
-    # package = pkgs.dms-greeter;
     quickshell.package = pkgs.quickshell;
     logs = {
       save = true;

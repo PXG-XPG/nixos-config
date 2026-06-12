@@ -1,5 +1,5 @@
 local M = {
-  OPACITY = 0.8
+  OPACITY = 0.5
 }
 
 return M

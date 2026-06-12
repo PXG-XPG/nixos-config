@@ -3,8 +3,12 @@
   imports = [
     ./cursorTheme.nix
     ./iconTheme.nix
-    ./niri-dotfiles.nix
   ];
+
+  home.file.".config/niri" = {
+    source = ./niri;
+    recursive = true;
+  };
 
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";

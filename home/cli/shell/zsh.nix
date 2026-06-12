@@ -18,7 +18,6 @@
       save = 10000;
     };
 
-    # 设置一些别名方便使用，你可以根据自己的需要进行增删
     shellAliases = {
       su = "su -";
       mv = "mv -i";
@@ -36,7 +35,7 @@
         name = "nix-zsh-completions";
         src = pkgs.nix-zsh-completions;
         file = "share/zsh/plugins/nix/nix-zsh-completions.plugin.zsh";
-        completions = [ "share/zsh/site-functions" ];
+        functions = [ "share/zsh/site-functions" ];
       }
       {
         name = "fast-syntax-highlighting";

@@ -8,17 +8,18 @@ include "dms/wpblur.kdl"
 include "dms/outputs.kdl"
 include "dms/windowrules.kdl"
 
-include "windowrule.kdl"
+include "windowRule.kdl"
 include "layout.kdl"
 include "env.kdl"
-include "startup.kdl"
 include "keybinding.kdl"
 include "output.kdl"
 include "input.kdl"
+include "layerRule.kdl"
 include "animations.kdl"
 
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store" // 剪贴板历史
 
 config-notification {
     disable-failed
@@ -28,11 +29,6 @@ gestures {
     hot-corners {
         off
     }
-}
-
-layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop true
 }
 
 overview {

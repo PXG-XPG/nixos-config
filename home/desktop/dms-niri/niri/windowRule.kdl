@@ -1,0 +1,36 @@
+// blur rule
+blur {
+    passes 2
+    offset 3.0
+    noise 0.02
+    saturation 1.4    
+}
+
+// Global rule
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 12
+    clip-to-geometry true
+    background-effect {
+        blur true
+        xray false
+    }
+}
+window-rule {
+    match is-active=false
+    opacity 0.8
+}
+
+// Open floating
+window-rule {
+    match app-id=r#"^steam$"#
+    match app-id=r#"^localsend_app$"#
+    match app-id=r#"^keet$"#
+    match title="flameshot-pin"
+    match app-id=r#"^xdg-desktop-portal$"#
+    match app-id=r#"^org.gnome.Loupe$"#
+    match app-id=r#"org.quickshell$"# // Open dms windows as floating by default
+    match app-id="org.kde.kdenlive"
+
+    open-floating true
+}

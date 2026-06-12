@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     nautilus
     loupe
+    evince
   ];
 
   programs.nautilus-open-any-terminal = {

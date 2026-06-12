@@ -36,6 +36,9 @@ return function(wezterm, config)
 
 		-- Quick select mode
 		{ key = "Space", mods = "ALT | CTRL", action = act.QuickSelect },
+
+		-- Toggle full screen
+		{ key = "F11", action = act.ToggleFullScreen },
 	}
 
 	-- Mouse bindings

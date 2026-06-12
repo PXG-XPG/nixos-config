@@ -5,8 +5,8 @@
     completion.enable = true;
     shellAliases = {
       su = "su -";
-      y = "yazi";
       mv = "mv -i";
+      y = "yazi";
       cp = "cp -i";
       cls = "clear";
       grep = "grep --color=auto";

@@ -20,9 +20,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixvim
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    # zen-broswer
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -32,7 +32,7 @@
       nixpkgs,
       nixpkgs-stable,
       disko,
-      nixvim,
+      zen-browser,
       home-manager,
       ...
   }: 
@@ -65,7 +65,6 @@
             home-manager.users.rum = {
               imports = [
                 ./home/home.nix
-                nixvim.homeModules.nixvim
               ];
             };
             home-manager.extraSpecialArgs = {
