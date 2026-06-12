@@ -18,6 +18,7 @@ lsblk
 # pull my nixos-config and exec install script
 ```
 git clone https://github.com/PXG-XPG/nixos-config.git
+cd nixos-config/
 chmod a+x ./install.sh
 ./install.sh
 ```
@@ -26,4 +27,6 @@ chmod a+x ./install.sh
 nixos-enter --root /mnt
 passwd rum
 passwd root
+exit
+shutdown -h now
 ```
