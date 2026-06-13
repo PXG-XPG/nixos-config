@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     git
     exfatprogs
+    e2fsprogs
     btrfs-progs
     p7zip
     pciutils # lspci
