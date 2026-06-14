@@ -16,6 +16,5 @@
     ./kmscon.nix
     ./flatpak.nix
     ./nix.nix
-    ./editor
   ];
 }

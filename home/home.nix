@@ -13,7 +13,7 @@
 
   # Define Envs
   home.sessionVariables = {
-    EDITOR = "nano";
+    EDITOR = "hx";
   };
 
   # Change in each release

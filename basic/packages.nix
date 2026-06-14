@@ -1,22 +1,17 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    git
     exfatprogs
     e2fsprogs
     btrfs-progs
-    p7zip
     pciutils # lspci
     usbutils # lsusb
     libva-utils
+    git
     lm_sensors # for `sensors` command
     usbtop
-    fd
-    ripgrep
-    zoxide
-    fzf
-    jq
     yazi # File manager
+    helix
     trash-cli
     ethtool
     mesa-demos

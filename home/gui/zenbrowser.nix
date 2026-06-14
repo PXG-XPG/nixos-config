@@ -68,7 +68,6 @@
                 template = "https://github.com/search?q={searchTerms}";
               }
             ];
-            icon = "/etc/nixos/imgs/github-logo.svg";
             definedAliases = ["@gh"];
           };
         };

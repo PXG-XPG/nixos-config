@@ -5,7 +5,7 @@
       ./hardware-configuration.nix
 
       # Include base configuration
-      ./base
+      ./basic
 
       # Include desktop configuration
       ./desktop

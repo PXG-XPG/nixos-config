@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
-  # Desktop Shell
   programs.dms-shell = {
     enable = true;
-    package = pkgs.dms-shell;
+    # package = pkgs.dms-shell;
     systemd = {
       enable = true;
       target = "graphical-session.target";
@@ -13,7 +12,6 @@
     enableVPN = true;
     enableSystemMonitoring = true;
     enableDynamicTheming = true;
-    # enableClipboard = true;
     enableCalendarEvents = true;
     enableAudioWavelength = true;
   };
