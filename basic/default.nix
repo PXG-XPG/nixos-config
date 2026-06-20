@@ -11,7 +11,6 @@
     ./fonts.nix
     ./sound.nix
     ./packages.nix
-    ./shell.nix
     ./user.nix
     ./kmscon.nix
     ./flatpak.nix

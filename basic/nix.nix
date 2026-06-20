@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   nix = {
-    package = pkgs.lix;
     settings = {
       experimental-features = [
         "auto-allocate-uids"
@@ -14,5 +13,10 @@
       auto-optimise-store = true;
       auto-allocate-uids = true;
     };
+  };
+
+  programs.nh = {
+    enable = true;
+    flake = "/etc/nixos";
   };
 }

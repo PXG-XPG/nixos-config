@@ -13,7 +13,7 @@
 
   # Define Envs
   home.sessionVariables = {
-    EDITOR = "hx";
+    EDITOR = "nvim";
   };
 
   # Change in each release

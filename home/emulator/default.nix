@@ -3,7 +3,7 @@
   imports = [
     ./wezterm
     ./kitty
-    ./ghostty
-    ./alacritty
+    # ./alacritty
+    # ./ghostty
   ];
 }

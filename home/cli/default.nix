@@ -11,5 +11,6 @@
     ./starship
     ./shell
     ./filemgr
+    ./editor
   ];
 }

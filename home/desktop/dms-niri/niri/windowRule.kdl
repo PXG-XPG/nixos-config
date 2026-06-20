@@ -24,13 +24,13 @@ window-rule {
 // Open floating
 window-rule {
     match app-id=r#"^steam$"#
-    match app-id=r#"^localsend_app$"#
     match app-id=r#"^keet$"#
     match title="flameshot-pin"
     match app-id=r#"^xdg-desktop-portal$"#
     match app-id=r#"^org.gnome.Loupe$"#
     match app-id=r#"org.quickshell$"# // Open dms windows as floating by default
     match app-id="org.kde.kdenlive"
+    match app-id="imv"
 
     open-floating true
 }

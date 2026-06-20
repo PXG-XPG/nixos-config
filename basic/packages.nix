@@ -9,8 +9,8 @@
     libva-utils
     git
     lm_sensors # for `sensors` command
+    just
     usbtop
-    yazi # File manager
     helix
     trash-cli
     ethtool

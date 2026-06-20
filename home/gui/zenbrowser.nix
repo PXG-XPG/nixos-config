@@ -16,15 +16,15 @@
 
       Preferences = {
         "media.hardware-video-decoding.force-enabled" = {
-          Value = true;
+          Value = false;
           Status = "locked";
         };
         "gfx.x11-egl.force-enabled" = {
-          Value = true;
+          Value = false;
           Status = "locked";
         };
         "widget.dmabuf.force-enabled" = {
-          Value = true;
+          Value = false;
           Status = "locked";
         };
       };

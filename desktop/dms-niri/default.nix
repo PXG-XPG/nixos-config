@@ -5,7 +5,6 @@
     ../gnome-keyring.nix
     ../xdg-desktop-portal.nix
     ../nautilus.nix
-    # ../thunar.nix
     ./niri
     ./dms
   ];

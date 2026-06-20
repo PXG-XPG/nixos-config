@@ -4,6 +4,7 @@
     ./windowing.nix
     ./gaming.nix
     ./dms-niri
+    ./fancontrol.nix
   ];
 
   environment.systemPackages = [
