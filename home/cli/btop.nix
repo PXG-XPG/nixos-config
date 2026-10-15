@@ -7,6 +7,7 @@
       theme_background = false;
       vim_keys = true;
       update_ms = 900;
+      selected_battery = "BAT1";
     };
     themes = {
       catppuccin_mocha = ''

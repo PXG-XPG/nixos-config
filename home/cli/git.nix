@@ -1,11 +1,11 @@
-{ ... }:
+{ username, ... }:
 {
   programs.git = {
     enable = true;
     lfs.enable = true;
     settings = {
       user = {
-        name = "rum";
+        name = username;
         email = "rum66627@gmail.com";
       };
       init = {

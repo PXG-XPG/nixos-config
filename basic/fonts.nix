@@ -1,46 +1,46 @@
 { pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    # 谷歌Noto Unicode码全覆盖
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-
-    # 为开发者打造的字体
-    maple-mono.NF-CN
-    nerd-fonts.jetbrains-mono
-
-    # 中文字体
-    source-han-mono
-    source-han-sans
-    source-han-serif
-    lxgw-wenkai-screen
-
-    # Twitter打造的emoji字体
-    twitter-color-emoji
+let
+  # Mount options for the bind mounts
+  mountOptions = [
+    "ro"
+    "x-gvfs-hide"
+    # Resolves symlinks as if they were real files
+    # Needed for things like OnlyOffice
+    "resolve-symlinks"
   ];
-  # all fonts are linked to /nix/var/nix/profiles/system/sw/share/X11/fonts
+in
+{
   fonts = {
-    # use fonts specified by user rather than default ones
-    enableDefaultPackages = true;
+    enableDefaultPackages = false;
     fontDir.enable = true;
 
-    # fonts are defined in /modules/base/fonts.nix, used by both NixOS & Darwin.
-    # packages = [ ... ];
+    packages = with pkgs; [
+      # 谷歌Noto Unicode码全覆盖
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+
+      maple-mono.NF-CN
+      nerd-fonts.jetbrains-mono
+
+      # 中文字体
+      source-han-mono
+      source-han-sans
+      source-han-serif
+      lxgw-wenkai-screen
+
+      # Twitter打造的emoji字体
+      twitter-color-emoji
+    ];
 
     fontconfig = {
-      # User defined default fonts
-      # https://catcat.cc/post/2021-03-07/
       defaultFonts = {
         serif = [
-          # 西文: 衬线字体（笔画末端有修饰(衬线)的字体，通常用于印刷。）
           "Source Serif 4"
           # 中文: 宋体（港台称明體）
           "Source Han Serif SC" # 思源宋体
           "Source Han Serif TC"
         ];
-
-        # SansSerif 也简写做 Sans, Sans 在法语中就是「without」或者「无」的意思
         sansSerif = [
           # 西文: 无衬线字体（指笔画末端没有修饰(衬线)的字体，通常用于屏幕显示）
           "Source Sans 3"
@@ -49,15 +49,15 @@
           "Source Han Sans SC" # 思源黑体
           "Source Han Sans TC"
         ];
-        # 等宽字体
         monospace = [
           # 中文
-          "Maple Mono NF CN" # 中英文宽度完美 2:1 的字体
+          "Maple Mono NF CN"
           "Source Han Mono SC" # 思源等宽
           "Source Han Mono TC"
           # 西文
           "JetBrainsMono Nerd Font"
         ];
+
         emoji = [
           "Twitter Color Emoji"
         ];
@@ -71,4 +71,26 @@
     };
   };
 
+  system.fsPackages = [ pkgs.bindfs ];
+
+  # Fonts
+  fileSystems."/usr/share/fonts" = {
+    device = "/run/current-system/sw/share/X11/fonts";
+    fsType = "fuse.bindfs";
+    options = mountOptions;
+  };
+
+  # Icons
+  fileSystems."/usr/share/icons" = {
+    device = "/run/current-system/sw/share/icons";
+    fsType = "fuse.bindfs";
+    options = mountOptions;
+  };
+
+  # Themes
+  fileSystems."/usr/share/themes" = {
+    device = "/run/current-system/sw/share/themes";
+    fsType = "fuse.bindfs";
+    options = mountOptions;
+  };
 }

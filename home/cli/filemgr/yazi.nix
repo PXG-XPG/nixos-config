@@ -19,6 +19,14 @@
         max_width = 1000;
         max_height = 1000;
       };
+
+      plugin = {
+        prepend_previewers = [
+          { url = "*.md"; run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"''; }
+          { url = "*.csv"; run = ''piper -- bat -p --color=always "$1"''; }
+          { url = "*/"; run = ''piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"''; }
+        ];
+      };
     };
 
     plugins = {
@@ -28,6 +36,7 @@
       full-border = pkgs.yaziPlugins.full-border;
       jump-to-char = pkgs.yaziPlugins.jump-to-char;
       lazygit = pkgs.yaziPlugins.lazygit;
+      piper = pkgs.yaziPlugins.piper;
     };
 
     initLua = ''

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   virtualisation.containers.enable = true;
 
@@ -9,7 +9,7 @@
     defaultNetwork.settings.dns_enabled = true;
   };
 
-  users.groups.podman.members = [ "rum" ];
+  users.groups.podman.members = [ username ];
 
   environment.systemPackages = with pkgs; [
     podman-tui

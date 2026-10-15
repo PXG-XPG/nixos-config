@@ -14,19 +14,19 @@
       DisableFeedbackCommands = true;
       DisableFirefoxStudies = true;
 
+      ExtensionSettings = {
+        "uBlock0@raymondhill.net" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "force_installed";
+        };
+      };
+
       Preferences = {
-        "media.hardware-video-decoding.force-enabled" = {
-          Value = false;
-          Status = "locked";
-        };
-        "gfx.x11-egl.force-enabled" = {
-          Value = false;
-          Status = "locked";
-        };
-        "widget.dmabuf.force-enabled" = {
-          Value = false;
-          Status = "locked";
-        };
+        "media.ffmpeg.vaapi.enabled" = { Value = true; Status = "locked"; };
+        "media.hardware-video-decoding.force-enabled" = { Value = true; Status = "locked"; };
+        "media.rdd-ffmpeg.enabled" = { Value = true; Status = "locked"; };
+        "gfx.x11-egl.force-enabled" = { Value = true; Status = "locked"; };
+        "widget.dmabuf.force-enabled" = { Value = true; Status = "locked"; };
       };
     };
 
@@ -54,12 +54,18 @@
           packageSearch = {
             name = "NixOS Packages Search(unstable)";
               urls = [
-                {
-                  template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
-                }
+                { template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; }
               ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@packages"];
+          };
+          homeOptionSearch = {
+            name = "NixOS Home manager option Search(unstable)";
+            urls = [
+              { template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
+            ];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@homeOptions"];
           };
           github = {
             name = "GitHub Search";
@@ -71,22 +77,6 @@
             definedAliases = ["@gh"];
           };
         };
-      };
-
-      bookmarks = {
-        force = true;
-        settings = [
-          {
-            name = "Quick Links";
-            toolbar = true;
-            bookmarks = [
-              {
-                name = "Phoronix";
-                url = "https://phoronix.com";
-              }
-            ];
-          }
-        ];
       };
     };
   };

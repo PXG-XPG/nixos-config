@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   nix = {
     settings = {
+      trusted-users = [ username ];
       experimental-features = [
         "auto-allocate-uids"
         "nix-command"

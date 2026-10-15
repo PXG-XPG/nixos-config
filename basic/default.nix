@@ -12,7 +12,6 @@
     ./sound.nix
     ./packages.nix
     ./user.nix
-    ./kmscon.nix
     ./flatpak.nix
     ./nix.nix
   ];

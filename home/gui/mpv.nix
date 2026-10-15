@@ -5,6 +5,7 @@
     config = {
       hwdec = "auto";
       vo = "gpu-next";
+      autofit-larger = "100%x100%";
       save-position-on-quit = true;
     };
     defaultProfiles = [

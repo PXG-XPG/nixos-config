@@ -9,6 +9,7 @@
       };
       updates = {
         auto_update = false;
+        tls_backend = "rustls-with-native-roots";
       };
       search = {
         languages = ["en"];

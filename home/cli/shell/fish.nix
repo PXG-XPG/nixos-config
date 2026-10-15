@@ -1,18 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, commonAliases, ... }:
 {
   programs.fish = {
     enable = true;
-    shellAliases = {
-      su = "su -";
-      mv = "mv -i";
-      cp = "cp -i";
-      cls = "clear";
-      grep = "grep --color=auto";
-      ff = "fastfetch";
-      ffall = "fastfetch -c all";
-      ".." = "cd ..";
-      "..." = "cd ../..";
-    };
+    shellAliases = commonAliases;
     plugins = [
       {
         name = "autopair";

@@ -1,12 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   boot.kernelModules = [
-    "kvm-intel"
     "vfio-pci"
   ];
 
   networking.firewall.trustedInterfaces = [ "virbr0" ];
-  users.groups.libvirtd.members = [ "rum" ];
+  users.groups.libvirtd.members = [ username ];
 
   programs.virt-manager.enable = true;
   virtualisation = {
@@ -23,8 +22,8 @@
 
   systemd.services.libvirt-default-network = {
     description = "Start libvirt default network";
-    after = ["libvirtd.service"];
-    wantedBy = ["multi-user.target"];
+    after = [ "libvirtd.service" ];
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
@@ -37,7 +36,7 @@
   environment.systemPackages = with pkgs; [
     qemu # QEMU 虚拟化工具
     qemu_kvm # KVM 支持的 QEMU 版本
-    OVMF # UEFI 固件支持
+    # OVMF # UEFI 固件支持
     dnsmasq # 用于默认网络的 DHCP 服务
   ];
 }

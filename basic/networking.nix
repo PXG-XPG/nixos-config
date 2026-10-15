@@ -7,6 +7,8 @@
   networking.networkmanager.enable = true;
 
   networking.firewall = {
-    allowedTCPPorts = [ 53317 ]; # 53317 is for LocalSend
+    allowedTCPPorts = [
+      53317 # for LocalSend
+    ]; 
   };
 }

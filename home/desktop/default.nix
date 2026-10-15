@@ -1,8 +1,10 @@
-{ ... }:
+{ lib, nixosConfig, ... }:
 {
   imports = [
     ./fontconfig
     ./xdg
-    ./dms-niri
+  ] ++ lib.optionals nixosConfig.programs.niri.enable [
+    # 仅当桌面环境是 niri 时导入
+    ./niri
   ];
 }

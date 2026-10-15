@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ...}:
+{ config, pkgs, lib, commonAliases, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -18,16 +18,8 @@
       save = 10000;
     };
 
-    shellAliases = {
-      su = "su -";
-      mv = "mv -i";
-      cp = "cp -i";
-      cls = "clear";
-      grep = "grep --color=auto";
-      ff = "fastfetch";
-      ffall = "fastfetch -c all";
-      ".." = "cd ..";
-      "..." = "cd ../..";
+    shellAliases = commonAliases // {
+      scrcpy = "scrcpy --video-codec=h265 --max-size=1920 --max-fps=165 --keyboard=uhid";
     };
 
     plugins = [
@@ -61,7 +53,7 @@
 
     envExtra = ''
       export STARSHIP_CONFIG=~/.config/tokyo-night.toml      
-    '';    
+    '';
 
     # 在这里添加自定义 zshrc 内容
     initContent = lib.mkMerge [

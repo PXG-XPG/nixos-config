@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   networking.nftables.enable = true;
-  networking.firewall.trustedInterfaces = [ "incusbr0" ]; 
+  networking.firewall.trustedInterfaces = [ "incusbr0" ];
 
-  users.groups.incus-admin.members = [ "rum" ];
-  
+  users.groups.incus-admin.members = [ username ];
+
   virtualisation.incus = {
     enable = true;
     preseed = {

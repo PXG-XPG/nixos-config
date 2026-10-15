@@ -8,6 +8,6 @@
     ./jq.nix
     ./fd.nix
     ./zoxide.nix
-    ./imv.nix
+    ./feh.nix
   ];
 }

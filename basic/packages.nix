@@ -3,12 +3,11 @@
   environment.systemPackages = with pkgs; [
     exfatprogs
     e2fsprogs
-    btrfs-progs
     pciutils # lspci
     usbutils # lsusb
-    libva-utils
-    git
+    alsa-utils
     lm_sensors # for `sensors` command
+    file
     just
     usbtop
     helix

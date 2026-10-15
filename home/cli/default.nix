@@ -8,6 +8,7 @@
     ./packages.nix
     ./git.nix
     ./bat.nix
+    ./opencode.nix
     ./starship
     ./shell
     ./filemgr

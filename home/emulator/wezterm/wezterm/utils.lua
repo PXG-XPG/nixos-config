@@ -1,5 +1,7 @@
 local M = {}
 
+M.OPACITY = 0.8
+
 function M.hex_to_rgba(hex, alpha)
     local hex = hex:gsub("#", "")
     local r, g, b = tonumber(hex:sub(1, 2), 16), tonumber(hex:sub(3, 4), 16), tonumber(hex:sub(5, 6), 16)
