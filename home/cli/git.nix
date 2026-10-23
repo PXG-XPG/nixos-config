@@ -11,6 +11,9 @@
       init = {
         defaultBranch = "main";
       };
+      safe = {
+        directory = "/etc/nixos";
+      };
     };
   };
 
