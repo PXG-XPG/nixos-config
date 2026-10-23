@@ -1,9 +1,13 @@
 default:
   @just --list --unsorted
 
-# Update flake.lock
+# Sync configuration from github
+sync:
+  @sudo git pull
+
+# Update flake.lock at local
 update:
-  @sudo nix flake update
+  @nix flake update
 
 # Build but not activate
 build:
