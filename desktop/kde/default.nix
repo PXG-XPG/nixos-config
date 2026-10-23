@@ -25,5 +25,8 @@
   environment.systemPackages = with pkgs.kdePackages; [
     kdenlive
     kcalc
+    kdf
+    filelight
+    isoimagewriter
   ];
 }

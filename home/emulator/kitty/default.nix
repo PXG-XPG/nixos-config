@@ -1,11 +1,8 @@
-{ ... }:
+{ config, pkgs, ... }:
 {
-  programs.kitty = {
-    enable = true;
-  };
+  home.packages = [ pkgs.kitty ];
 
   home.file.".config/kitty" = {
-    source = ./kitty;
-    recursive = true;
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/home/emulator/kitty/kitty";
   };
 }

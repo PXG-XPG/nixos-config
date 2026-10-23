@@ -57,7 +57,15 @@
                 { template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; }
               ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@packages"];
+            definedAliases = ["@pkgs"];
+          };
+          optionSearch = {
+            name = "Nixos option Search(unstable)";
+            urls = [
+              { template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}"; }
+            ];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@no"];
           };
           homeOptionSearch = {
             name = "NixOS Home manager option Search(unstable)";
@@ -65,7 +73,7 @@
               { template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
             ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@homeOptions"];
+            definedAliases = ["@ho"];
           };
           github = {
             name = "GitHub Search";

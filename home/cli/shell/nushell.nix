@@ -1,4 +1,4 @@
-{ pkgs, homeDirectory, commonAliases, ... }:
+{ config, commonAliases, ... }:
 {
   programs.nushell = {
     enable = true;
@@ -6,11 +6,14 @@
     settings = {
       show_banner = false;
     };
-    extraConfig = "
-      fastfetch
-    ";
     environmentVariables = {
-      STARSHIP_CONFIG = "${homeDirectory}/.config/catppuccin-powerline.toml";
+      STARSHIP_CONFIG = "${config.home.homeDirectory}/.config/catppuccin-powerline.toml";
     };
+    extraConfig = ''
+      if ($env.NUSHELL_STARTED? == null) {
+        fastfetch
+        $env.NUSHELL_STARTED = "1"
+      }
+    '';
   };
 }

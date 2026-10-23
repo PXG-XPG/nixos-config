@@ -1,11 +1,8 @@
-{ ... }:
+{ config, pkgs, ... }:
 {
-  programs.wezterm = {
-    enable = true;
-  };
+  home.packages = [ pkgs.wezterm ];
 
   home.file.".config/wezterm" = {
-    source = ./wezterm;
-    recursive = true;
+    source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/home/emulator/wezterm/wezterm";
   };
 }

@@ -1,7 +1,0 @@
-require("plugins.toggleterm")
--- require("plugins.base64")
-require("plugins.whichkey")
-require("plugins.blink")
-require("plugins.yanky")
-require("plugins.grug-far")
-require("plugins.oil")

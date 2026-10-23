@@ -11,5 +11,6 @@
     ffall = "fastfetch -c all";
     ".." = "cd ..";
     "..." = "cd ../..";
+    scrcpy = "scrcpy --video-codec=h265 --max-size=1920 --max-fps=165 --keyboard=uhid";
   };
 }

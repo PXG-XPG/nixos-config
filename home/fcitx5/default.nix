@@ -9,9 +9,7 @@
       addons = with pkgs; [
         fcitx5-gtk # gtk im module
         kdePackages.fcitx5-chinese-addons
-        fcitx5-mozc-ut # Moze with UT dictionary
-
-        fcitx5-mellow-themes
+        # fcitx5-mozc-ut # Moze with UT dictionary
       ] ++ lib.optionals nixosConfig.programs.niri.enable [
         # GUI for fcitx5，仅 niri 桌面需要（KDE 自带 GUI）
         qt6Packages.fcitx5-configtool

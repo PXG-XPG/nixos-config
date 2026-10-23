@@ -1,6 +1,6 @@
 local M = {}
 
-M.OPACITY = 0.8
+M.OPACITY = 0.7
 
 function M.hex_to_rgba(hex, alpha)
     local hex = hex:gsub("#", "")

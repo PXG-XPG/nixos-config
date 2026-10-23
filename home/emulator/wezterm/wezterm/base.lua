@@ -44,5 +44,5 @@ return function(wezterm, config)
 
 	-- general
 	config.check_for_updates = false
-	config.exit_behavior = "CloseOnCleanExit"
+	-- config.exit_behavior = "CloseOnCleanExit"
 end

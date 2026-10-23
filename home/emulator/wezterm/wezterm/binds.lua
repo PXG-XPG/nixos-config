@@ -30,6 +30,8 @@ return function(wezterm, config)
 		-- Scroll
 		{ key = "p", mods = "ALT", action = act.ScrollByLine(-1) },
 		{ key = "n", mods = "ALT", action = act.ScrollByLine(1) },
+		{ key = "PageUp", action = act.ScrollByPage(-1) },
+		{ key = "PageDown", action = act.ScrollByPage(1) },
 
 		-- Copy mode
 		{ key = "Space", mods = "CTRL", action = act.ActivateCopyMode },

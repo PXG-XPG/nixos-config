@@ -23,10 +23,10 @@
 	          j = "down";
 	          k = "up";
 	          l = "right";
-	          a = "end";        # right Alt + a -> 行尾
-	          i = "home";       # right Alt + i -> 行首
-	          d = "delete";     # right Alt + d -> Delete
-	          b = "backspace";  # right Alt + b -> Backspace
+	          a = "end";         # right Alt + a -> 行尾
+	          i = "home";        # right Alt + i -> 行首
+	          p = "pageup";      # right Alt + p -> PageUp
+	          n = "pagedown";    # right Alt + n -> PageDown
 	        };
         };
       };

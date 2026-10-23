@@ -1,39 +1,44 @@
-{ config, pkgs, lib, commonAliases, ... }:
+{ config, pkgs, commonAliases, ... }:
 {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableVteIntegration = true;
     autocd = true;
-    autosuggestion.enable = true;
+    autosuggestion = {
+      enable = true;
+      strategy = [ "history" "completion" ];
+    };
     defaultKeymap = "emacs";
+    shellAliases = commonAliases;
+    fastSyntaxHighlighting = {
+      enable = true;
+      settings = {
+        "chroma-," = "→chroma/-precommand.ch";
+        chroma-comma = "→chroma/-precommand.ch";
+        use_brackets = "0";
+      };
+    };
 
     history = {
       ignoreDups = true;
       ignoreSpace = true;
       expireDuplicatesFirst = true;
       share = true;
-      append = true;
       extended = true;
-      save = 10000;
+      size = 50000;
+      save = 50000;
+      ignorePatterns = [ "* --password*" "* *token*" ];
     };
 
-    shellAliases = commonAliases // {
-      scrcpy = "scrcpy --video-codec=h265 --max-size=1920 --max-fps=165 --keyboard=uhid";
-    };
+    setOptions = [
+      "HIST_REDUCE_BLANKS"
+      "HIST_SAVE_NO_DUPS"
+      "HIST_FIND_NO_DUPS"
+      "NO_BEEP"
+    ];
 
     plugins = [
-      {
-        name = "nix-zsh-completions";
-        src = pkgs.nix-zsh-completions;
-        file = "share/zsh/plugins/nix/nix-zsh-completions.plugin.zsh";
-        functions = [ "share/zsh/site-functions" ];
-      }
-      {
-        name = "fast-syntax-highlighting";
-        src = pkgs.zsh-fast-syntax-highlighting;
-        file = "share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh";
-      }
       {
         name = "autopair";
         inherit (pkgs.zsh-autopair) src;
@@ -51,25 +56,40 @@
       }
     ];
 
-    envExtra = ''
-      export STARSHIP_CONFIG=~/.config/tokyo-night.toml      
-    '';
+    sessionVariables = {
+      STARSHIP_CONFIG = "${config.home.homeDirectory}/.config/tokyo-night.toml";
+    };
 
     # 在这里添加自定义 zshrc 内容
-    initContent = lib.mkMerge [
-      # Workaround for home-manager#2562: completions from home.packages aren't in fpath
-      (lib.mkOrder 561 ''
-        fpath+=("${config.home.profileDirectory}"/share/zsh/site-functions \
-                "${config.home.profileDirectory}"/share/zsh/$ZSH_VERSION/functions \
-                "${config.home.profileDirectory}"/share/zsh/vendor-completions)
-      '')
-      ''
+    initContent = ''
+      if [[ $SHLVL -eq 1 ]]; then
         fastfetch
+      fi
 
-        autoload -Uz edit-command-line
-        zle -N edit-command-line
-        bindkey '^x^e' edit-command-line
-      ''
-    ];
+      # 让 <C-s> 透传给程序（禁用 XOFF 流控），供 nvim 保存用
+      stty -ixon
+
+      autoload -Uz edit-command-line
+      zle -N edit-command-line
+      bindkey '^x^e' edit-command-line
+
+      sudo-command-line() {
+        [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
+        if [[ $BUFFER == sudo\ * ]]; then
+          LBUFFER="''${LBUFFER#sudo }"
+        else
+          LBUFFER="sudo $LBUFFER"
+        fi
+      }
+      zle -N sudo-command-line
+      bindkey '\es' sudo-command-line
+
+      bindkey '^[[H' beginning-of-line
+      bindkey '^[[F' end-of-line
+      bindkey '^[OH' beginning-of-line
+      bindkey '^[OF' end-of-line
+      bindkey '^[[1~' beginning-of-line
+      bindkey '^[[4~' end-of-line
+    '';
   };
 }
