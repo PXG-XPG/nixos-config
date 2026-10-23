@@ -5,10 +5,6 @@ default:
 sync:
   @sudo git pull
 
-# Update flake.lock at local
-update:
-  @nix flake update
-
 # Build but not activate
 build:
   nh os boot
