@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  # KDE Plasma 桌面环境（与 niri 套件二选一，通过 desktop/default.nix 的 import 切换）
   services.desktopManager.plasma6.enable = true;
 
   # Default display manager for Plasma
