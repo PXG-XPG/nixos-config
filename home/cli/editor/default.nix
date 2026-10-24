@@ -2,7 +2,7 @@
 {
   programs.neovim = {
     enable = true;
-    sideloadInitLua = true;
+    sideloadInitLua = false;
 
     extraPackages = with pkgs; [
       tree-sitter
@@ -39,5 +39,10 @@
       ruff           # lint + format
       python3        # basedpyright 解析 import / 类型推断用
     ];
+  };
+
+  home.file.".config/nvim" = {
+    source = ./nvim;
+    recursive = true;
   };
 }
