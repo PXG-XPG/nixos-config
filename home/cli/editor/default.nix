@@ -34,6 +34,10 @@
       bash-language-server   # 提供 bashls
       shellcheck             # bashls 用它做 lint/诊断
       shfmt                  # 可选：格式化（<leader>lf）
+
+      basedpyright   # 提供 basedpyright-langserver
+      ruff           # lint + format
+      python3        # basedpyright 解析 import / 类型推断用
     ];
   };
 }
