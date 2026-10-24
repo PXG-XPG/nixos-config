@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # zen-broswer
+    # zen-browser
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,41 +42,57 @@
       # 用户名/家目录的唯一来源，全库模块通过 specialArgs 读取，避免散落硬编码
       username = "rum";
       homeDirectory = "/home/${username}";
+
+      # 抽出来复用：NixOS 配置与 Home Manager 配置共用
+      nixosConfiguration = nixpkgs.lib.nixosSystem {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        specialArgs = {
+          inherit inputs username homeDirectory;
+          # pin 某个包到 stable 分支时使用
+          pkgs-stable = import nixpkgs-stable { inherit system; config.allowUnfree = true; };
+        };
+        modules = [
+          ./configuration.nix
+
+          # Import disko module
+          disko.nixosModules.disko
+          ./disko/disko.nix
+
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "bak";
+            home-manager.overwriteBackup = true;
+            home-manager.users.${username} = {
+              imports = [
+                ./home/home.nix
+              ];
+            };
+            home-manager.extraSpecialArgs = {
+              inherit inputs username homeDirectory;
+            };
+          }
+        ];
+      };
     in
     {
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          specialArgs = {
-            inherit inputs username homeDirectory;
-            # 如需 pin 某个包到 stable 分支，再启用下面这行：
-            pkgs-stable = import ../../nixpkgs-stable { inherit system; config.allowUnfree = true; };
-          };
-          modules = [
-            ./configuration.nix
+      nixosConfigurations.nixos = nixosConfiguration;
 
-            # Import disko module
-            disko.nixosModules.disko
-            ./disko/disko.nix
-
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "bak";
-              home-manager.overwriteBackup = true;
-              home-manager.users.${username} = {
-                imports = [
-                  ./home/home.nix
-                ];
-              };
-              home-manager.extraSpecialArgs = {
-                inherit inputs username homeDirectory;
-              };
-            }
-          ];
+      # standalone Home Manager 配置，供 nixd 的 home-manager 选项补全使用
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        modules = [
+          ./home/home.nix
+        ];
+        extraSpecialArgs = {
+          inherit inputs username homeDirectory;
+          # 当前 Home 侧没有模块引用 nixosConfig，暂不传递以避免完整求值 NixOS 系统
         };
       };
     };
