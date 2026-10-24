@@ -30,6 +30,10 @@
       # 图片预览
       imagemagick
       chafa      # fzf-lua 图片预览（kitty 图形协议）
+
+      bash-language-server   # 提供 bashls
+      shellcheck             # bashls 用它做 lint/诊断
+      shfmt                  # 可选：格式化（<leader>lf）
     ];
   };
 }
