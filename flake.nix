@@ -69,10 +69,11 @@
             home-manager.users.${username} = {
               imports = [
                 ./home/home.nix
+                inputs.zen-browser.homeModules.twilight
               ];
             };
             home-manager.extraSpecialArgs = {
-              inherit inputs username homeDirectory;
+              inherit username homeDirectory;
             };
           }
         ];
@@ -89,9 +90,10 @@
         };
         modules = [
           ./home/home.nix
+          inputs.zen-browser.homeModules.twilight
         ];
         extraSpecialArgs = {
-          inherit inputs username homeDirectory;
+          inherit username homeDirectory;
           # 当前 Home 侧没有模块引用 nixosConfig，暂不传递以避免完整求值 NixOS 系统
         };
       };
