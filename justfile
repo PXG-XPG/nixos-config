@@ -7,7 +7,7 @@ sync:
 
 # Build but not activate
 build:
-  nh os boot
+  @nh os boot
   @echo "Reboot to apply new configuration!"
 
 # Clean all Old generations and gc

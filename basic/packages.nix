@@ -10,7 +10,6 @@
     file
     just
     usbtop
-    helix
     trash-cli
     ethtool
     mesa-demos
