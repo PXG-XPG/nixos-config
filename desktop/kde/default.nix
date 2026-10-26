@@ -27,5 +27,6 @@
     kdf
     filelight
     isoimagewriter
+    krdc
   ];
 }
