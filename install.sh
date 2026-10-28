@@ -31,13 +31,13 @@ if [[ "$confirm" != "yes" ]]; then
 fi
 
 # 清理可能残留的挂载与 swap
-sudo umount -R /mnt 2>/dev/null || true
-sudo swapoff -a 2>/dev/null || true
+# sudo umount -R /mnt 2>/dev/null || true
+# sudo swapoff -a 2>/dev/null || true
 
 # 彻底清空目标盘：移除文件系统签名 + 清空分区表
-sudo wipefs -a "$DISK"
-sudo sgdisk --zap-all "$DISK" 2>/dev/null || true
-sudo partprobe "$DISK" 2>/dev/null || true
+# sudo wipefs -a "$DISK"
+# sudo sgdisk --zap-all "$DISK" 2>/dev/null || true
+# sudo partprobe "$DISK" 2>/dev/null || true
 
 echo "=== 1. Partitioning, Formatting, and Mounting (disko) ==="
 sudo nix --experimental-features "nix-command flakes" \
