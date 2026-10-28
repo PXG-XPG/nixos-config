@@ -8,8 +8,10 @@
           type = "gpt";
           partitions = {
             ESP = {
+              priority = 1;
               label = "ESP";
-              size = "2048M";
+              start = "1M";
+              end = "2048M";
               type = "EF00";
               content = {
                 type = "filesystem";
