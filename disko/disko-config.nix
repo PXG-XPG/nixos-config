@@ -8,7 +8,7 @@
           type = "gpt";
           partitions = {
             ESP = {
-              name = "ESP";
+              label = "ESP";
               size = "2048M";
               type = "EF00";
               content = {
@@ -19,10 +19,11 @@
               };
             };
             root = {
+              label = "ROOT";
               size = "100%";
               content = {
                 type = "btrfs";
-                extraArgs = [ "-f" "-L nixos" ];
+                extraArgs = [ "-f" ];
                 subvolumes = {
                   "@root" = {
                     mountOptions = [
