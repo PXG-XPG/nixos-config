@@ -13,6 +13,7 @@
     ./packages.nix
     ./user.nix
     ./flatpak.nix
+    ./trim.nix
     ./nix.nix
   ];
 }
