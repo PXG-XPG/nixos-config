@@ -1,17 +1,23 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# 确保相对路径基于脚本所在目录
+cd "$(dirname "$0")"
+
+# === Configuration === #
 HOSTNAME="nixos"
 DISKO_CONFIG="./disko/disko-config.nix"
 DISK="/dev/nvme1n1"
 
+# 校验目标盘存在
 if [[ ! -b "$DISK" ]]; then
     echo "ERROR: $DISK is not a block device"
     exit 1
 fi
 
-if findmnt -rn -S "$DISK" >/dev/null 2>&1; then
-    echo "ERROR: $DISK is currently in use (mounted). Unmount it first."
+# 校验目标盘及其分区未被挂载
+if lsblk -ln -o MOUNTPOINT "$DISK" | grep -q .; then
+    echo "ERROR: $DISK or its partitions are currently mounted. Unmount them first."
     exit 1
 fi
 
@@ -24,13 +30,14 @@ if [[ "$confirm" != "yes" ]]; then
     exit 1
 fi
 
-# 清理挂载与 swap
+# 清理可能残留的挂载与 swap
 sudo umount -R /mnt 2>/dev/null || true
 sudo swapoff -a 2>/dev/null || true
 
-# 彻底清空目标盘签名与分区表
+# 彻底清空目标盘：移除文件系统签名 + 清空分区表
 sudo wipefs -a "$DISK"
 sudo sgdisk --zap-all "$DISK" 2>/dev/null || true
+sudo partprobe "$DISK" 2>/dev/null || true
 
 echo "=== 1. Partitioning, Formatting, and Mounting (disko) ==="
 sudo nix --experimental-features "nix-command flakes" \
@@ -38,6 +45,11 @@ sudo nix --experimental-features "nix-command flakes" \
     --mode destroy,format,mount \
     "$DISKO_CONFIG" \
     --arg disk "{ main = \"$DISK\"; }"
+
+# 可选：确认 destroy 已生效
+if [[ -d /mnt/nix/store ]] && [[ -n "$(ls -A /mnt/nix/store 2>/dev/null)" ]]; then
+    echo "WARNING: /mnt/nix/store is not empty; destroy may not have fully wiped the disk."
+fi
 
 # 复制仓库配置（不复制隐藏文件，避免带入 .git）
 sudo mkdir -p /mnt/etc/nixos
