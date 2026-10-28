@@ -29,13 +29,13 @@ sudo nix --experimental-features "nix-command flakes" \
     "$DISKO_CONFIG" \
     --arg disk "{ main = \"$DISK\"; }"
 
-echo "=== 2. Generating hardware-configuration.nix ==="
-sudo nixos-generate-config --no-filesystems --root /mnt
+# echo "=== 2. Generating hardware-configuration.nix ==="
+# sudo nixos-generate-config --no-filesystems --root /mnt
 
-echo "=== 3. Copying entire configuration to target system ==="
+echo "=== 2. Copying entire configuration to target system ==="
 sudo cp -rf ./* /mnt/etc/nixos
 
-echo "=== 4. Executing nixos-install ==="
+echo "=== 3. Executing nixos-install ==="
 sudo nixos-install --flake "/mnt/etc/nixos#$HOSTNAME" --no-root-password
 
 echo "=== Installation Complete! ==="
