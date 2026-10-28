@@ -33,7 +33,7 @@ echo "=== 2. Generating hardware-configuration.nix ==="
 sudo nixos-generate-config --no-filesystems --root /mnt
 
 echo "=== 3. Copying entire configuration to target system ==="
-sudo cp -r ./* /mnt/etc/nixos
+sudo cp -rf ./* /mnt/etc/nixos
 
 echo "=== 4. Executing nixos-install ==="
 sudo nixos-install --flake "/mnt/etc/nixos#$HOSTNAME" --no-root-password
