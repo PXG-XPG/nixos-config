@@ -11,7 +11,7 @@ DISKO_CONFIG="./disko/disko-config.nix"
 # Target disk (WILL BE FULLY ERASED! Ensure this is correct)
 # For physical machines, usually /dev/nvme0n1 or /dev/sda
 # For virtual machine testing, usually /dev/vda
-DISK="/dev/nvme1n1"
+DISK="/dev/nvme0n1"
 
 echo "WARNING: This script will completely erase $DISK and install NixOS to $HOSTNAME"
 echo "Disk: $DISK"
