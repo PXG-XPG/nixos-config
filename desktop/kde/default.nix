@@ -22,6 +22,7 @@
   ];
 
   environment.systemPackages = with pkgs.kdePackages; [
+    kiten
     kdenlive
     kcalc
     kdf
