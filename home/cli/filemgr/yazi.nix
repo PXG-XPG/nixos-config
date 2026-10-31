@@ -46,7 +46,7 @@
 
     keymap = {
       mgr.append_keymap = [
-        { on = [ "g" "w" ]; run = "cd ~/Workspace"; desc = "Go ~/Workspace"; }
+        { on = [ "g" "C" ]; run = "cd ~/nixos-config"; desc = "Go to config-repo"; }
         { on = [ "c" "m" ]; run = "plugin chmod"; desc = "Chmod on selected files"; }
         { on = [ "F" ]; run = "plugin jump-to-char"; desc = "Jump to char"; }
       ];
