@@ -3,7 +3,7 @@
   imports = [
     ./cli
     ./gui
-    ./fcitx5
+    # ./fcitx5
     ./desktop
     ./emulator
   ];
