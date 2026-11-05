@@ -1,13 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.btop = {
     enable = true;
+    package = pkgs.btop-cuda;
     settings = {
       color_theme = "catppuccin_mocha";
       theme_background = false;
       vim_keys = true;
       update_ms = 900;
-      selected_battery = "BAT1";
     };
     themes = {
       catppuccin_mocha = ''
