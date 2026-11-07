@@ -3,7 +3,7 @@
   imports = [
     ./fastfetch.nix
     ./eza.nix
-    ./btop.nix
+    # ./btop.nix
     ./tldr.nix
     ./packages.nix
     ./git.nix
