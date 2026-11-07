@@ -3,6 +3,7 @@
   programs.btop = {
     enable = true;
     package = pkgs.btop-cuda;
+    /*
     settings = {
       color_theme = "catppuccin_mocha";
       theme_background = false;
@@ -97,4 +98,5 @@
       '';
     };
   };
+  */
 }
