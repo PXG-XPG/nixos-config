@@ -9,6 +9,7 @@
     ./git.nix
     ./bat.nix
     ./opencode.nix
+    ./pi.nix
     ./starship
     ./shell
     ./filemgr
