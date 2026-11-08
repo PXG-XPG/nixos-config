@@ -24,7 +24,7 @@
           name = "default";
           devices = {
             eth0 = { name = "eth0"; network = "incusbr0"; type = "nic"; };
-            root = { path = "/"; pool = "default"; size = "256GiB"; type = "disk"; };
+            root = { path = "/"; pool = "default"; size = "128GiB"; type = "disk"; };
           };
         }
       ];
