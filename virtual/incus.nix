@@ -1,7 +1,8 @@
-{ pkgs, username, ... }:
+{ username, ... }:
 {
   networking.nftables.enable = true;
   networking.firewall.trustedInterfaces = [ "incusbr0" ];
+  networking.firewall.allowedTCPPorts = [ 8443 ];
 
   users.groups.incus-admin.members = [ username ];
 
