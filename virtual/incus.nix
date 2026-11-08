@@ -10,6 +10,9 @@
     enable = true;
     ui.enable = true;
     preseed = {
+      config = {
+        "core.https_address" = ":8443";
+      };
       networks = [
         {
           name = "incusbr0";
