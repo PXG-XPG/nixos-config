@@ -7,7 +7,7 @@
 
   virtualisation.incus = {
     enable = true;
-    ui = true;
+    ui.enable = true;
     preseed = {
       networks = [
         {
