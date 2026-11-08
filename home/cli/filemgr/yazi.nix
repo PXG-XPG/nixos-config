@@ -32,7 +32,7 @@
     theme = {
       icon = {
         append_dirs = [
-          { name = "Projects"; text = "󰲋 "; fg = "#563d7c"; }
+          { name = "Projects"; text = "󰲋"; fg = "reset"; }
         ];
       };
     };
