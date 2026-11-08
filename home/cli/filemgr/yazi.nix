@@ -29,6 +29,14 @@
       };
     };
 
+    theme = {
+      icon = {
+        append_dirs = [
+          { name = "Projects"; text = "󰲋 "; fg = "#563d7c"; }
+        ];
+      };
+    };
+
     plugins = {
       diff = pkgs.yaziPlugins.diff;
       chmod = pkgs.yaziPlugins.chmod;
