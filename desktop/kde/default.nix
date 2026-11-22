@@ -30,5 +30,6 @@
     isoimagewriter
     krdc
     kcharselect
+    partitionmanager
   ];
 }
