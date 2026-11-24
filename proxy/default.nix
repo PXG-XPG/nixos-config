@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
-    ./dae.nix
+    # ./dae.nix
+    ./mihomo.nix
   ];
 }
